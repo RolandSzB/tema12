@@ -2,6 +2,7 @@
 defineEmits(["sortTopRated", "sortPopular", "sortPrice", "sortNewest"]);
 defineProps({
   sortSens: String,
+  sortActive: Number,
 });
 </script>
 
@@ -13,32 +14,40 @@ defineProps({
       @click="$emit('sortTopRated')"
     >
       Top rated
-      <i v-if="sortSens === 'asc'" class="bi bi-arrow-down"></i>
-      <i v-else class="bi bi-arrow-up"></i>
+      <span v-if="sortActive === 1">
+        <i v-if="sortSens === 'asc'" class="bi bi-arrow-down"></i>
+        <i v-else class="bi bi-arrow-up"></i
+      ></span>
     </button>
     <button
       class="m-3 px-3 py-1 bg-slate-500 rounded-xl"
       @click="$emit('sortPopular')"
     >
       Popular
-      <i v-if="sortSens === 'asc'" class="bi bi-arrow-down"></i>
-      <i v-else class="bi bi-arrow-up"></i>
+      <span v-if="sortActive === 2">
+        <i v-if="sortSens === 'asc'" class="bi bi-arrow-down"></i>
+        <i v-else class="bi bi-arrow-up"></i
+      ></span>
     </button>
     <button
       class="m-3 px-3 py-1 bg-slate-500 rounded-xl"
       @click="$emit('sortPrice')"
     >
       Price
-      <i v-if="sortSens === 'asc'" class="bi bi-arrow-down"></i>
-      <i v-else class="bi bi-arrow-up"></i>
+      <span v-if="sortActive === 3">
+        <i v-if="sortSens === 'asc'" class="bi bi-arrow-down"></i>
+        <i v-else class="bi bi-arrow-up"></i>
+      </span>
     </button>
     <button
       class="m-3 px-3 py-1 bg-slate-500 rounded-xl"
       @click="$emit('sortNewest')"
     >
       Newest
-      <i v-if="sortSens === 'asc'" class="bi bi-arrow-down"></i>
-      <i v-else class="bi bi-arrow-up"></i>
+      <span v-if="sortActive === 4">
+        <i v-if="sortSens === 'asc'" class="bi bi-arrow-down"></i>
+        <i v-else class="bi bi-arrow-up"></i>
+      </span>
     </button>
   </div>
 </template>

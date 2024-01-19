@@ -46,7 +46,8 @@ const products = ref([
   },
 ]);
 
-const sortSens = ref("asc");
+const sortSens = ref("desc");
+const sortActive = ref(4);
 
 function sortTopRated() {
   if (sortSens.value === "asc") {
@@ -56,6 +57,7 @@ function sortTopRated() {
     products.value.sort((a, b) => b.stars - a.stars);
     sortSens.value = "asc";
   }
+  sortActive.value = 1;
 }
 function sortPopular() {
   if (sortSens.value === "asc") {
@@ -65,6 +67,7 @@ function sortPopular() {
     products.value.sort((a, b) => b.sales - a.sales);
     sortSens.value = "asc";
   }
+  sortActive.value = 2;
 }
 function sortPrice() {
   if (sortSens.value === "asc") {
@@ -74,6 +77,7 @@ function sortPrice() {
     products.value.sort((a, b) => b.price - a.price);
     sortSens.value = "asc";
   }
+  sortActive.value = 3;
 }
 function sortNewest() {
   if (sortSens.value === "asc") {
@@ -87,11 +91,19 @@ function sortNewest() {
     );
     sortSens.value = "asc";
   }
+  sortActive.value = 4;
 }
+
+import { onMounted } from "vue";
+onMounted(() => {
+  // sortTopRated();
+  sortNewest();
+});
 </script>
 
 <template>
   <SortProduct
+    :sortActive="sortActive"
     :sortSens="sortSens"
     @sortTopRated="sortTopRated"
     @sortPopular="sortPopular"
