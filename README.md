@@ -1,7 +1,11 @@
-Sort Top Rated: ![image](https://github.com/RolandSzB/tema12/assets/125957801/c6a44fcd-fca8-4c7f-a65f-581d23860da6) 
-Sort Popular: ![image](https://github.com/RolandSzB/tema12/assets/125957801/c349de33-1d75-4129-b39b-16d30272c22c)
-Sort Price: ![image](https://github.com/RolandSzB/tema12/assets/125957801/adcddb5b-292e-43a4-83ea-72a948043bf1) 
-Sort Newest: ![image](https://github.com/RolandSzB/tema12/assets/125957801/7bdfdf5c-51d6-42e0-835e-23a89db3631f) 
+Sort Top Rated: ![image](https://github.com/RolandSzB/tema12/assets/125957801/e6b02ea4-b3c1-47ec-bcec-27404671533e)
+
+Sort Popular: ![image](https://github.com/RolandSzB/tema12/assets/125957801/cce80428-1f76-4048-9cee-e24f2d8f276f)
+
+Sort Price: ![image](https://github.com/RolandSzB/tema12/assets/125957801/38658001-d01d-45d2-b156-586f0ffe547f)
+
+Sort Newest: ![image](https://github.com/RolandSzB/tema12/assets/125957801/e3888e18-d259-499c-b860-0c5308b7a130)
+
 
 
 
