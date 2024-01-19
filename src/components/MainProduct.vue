@@ -6,7 +6,7 @@ defineProps({
 
 <template>
   <div
-    class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 m-2"
+    class="w-1/5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 m-2"
   >
     <a href="#">
       <img
@@ -23,10 +23,20 @@ defineProps({
           {{ details.name }}
         </h5>
       </a>
-      <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+      <p class="mb-3 font-normal text-yellow-400">
         {{ details.stars }}
-        <i class="bi bi-star-fill"></i>
+        <i
+          v-for="star in new Array(parseInt(details.stars))"
+          class="bi bi-star-fill"
+        ></i>
+        <i
+          v-if="details.stars - Math.floor(details.stars) > 0"
+          class="bi bi-star-half"
+        ></i>
       </p>
+      <p class="mb-3 font-normal text-gray-300">Sales: {{ details.sales }}</p>
+      <p class="mb-3 font-normal text-gray-300">Price: {{ details.price }}$</p>
+      <p class="mb-3 font-sm text-gray-700">{{ details.date }}</p>
       <a
         href="#"
         class="inline-flex items-center px-3 py-2 mx-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
