@@ -1,5 +1,8 @@
 <script setup>
 defineEmits(["sortTopRated", "sortPopular", "sortPrice", "sortNewest"]);
+defineProps({
+  sortSens: String,
+});
 </script>
 
 <template>
@@ -10,24 +13,32 @@ defineEmits(["sortTopRated", "sortPopular", "sortPrice", "sortNewest"]);
       @click="$emit('sortTopRated')"
     >
       Top rated
+      <i v-if="sortSens === 'asc'" class="bi bi-arrow-up"></i>
+      <i v-else class="bi bi-arrow-down"></i>
     </button>
     <button
       class="m-3 px-3 py-1 bg-slate-500 rounded-xl"
       @click="$emit('sortPopular')"
     >
       Popular
+      <i v-if="sortSens === 'asc'" class="bi bi-arrow-up"></i>
+      <i v-else class="bi bi-arrow-down"></i>
     </button>
     <button
       class="m-3 px-3 py-1 bg-slate-500 rounded-xl"
       @click="$emit('sortPrice')"
     >
       Price
+      <i v-if="sortSens === 'asc'" class="bi bi-arrow-up"></i>
+      <i v-else class="bi bi-arrow-down"></i>
     </button>
     <button
       class="m-3 px-3 py-1 bg-slate-500 rounded-xl"
       @click="$emit('sortNewest')"
     >
       Newest
+      <i v-if="sortSens === 'asc'" class="bi bi-arrow-up"></i>
+      <i v-else class="bi bi-arrow-down"></i>
     </button>
   </div>
 </template>

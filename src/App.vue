@@ -46,24 +46,53 @@ const products = ref([
   },
 ]);
 
+const sortSens = ref("asc");
+
 function sortTopRated() {
-  products.value.sort((a, b) => a.stars - b.stars);
+  if (sortSens.value === "asc") {
+    products.value.sort((a, b) => a.stars - b.stars);
+    sortSens.value = "desc";
+  } else {
+    products.value.sort((a, b) => b.stars - a.stars);
+    sortSens.value = "asc";
+  }
 }
 function sortPopular() {
-  products.value.sort((a, b) => a.sales - b.sales);
+  if (sortSens.value === "asc") {
+    products.value.sort((a, b) => a.sales - b.sales);
+    sortSens.value = "desc";
+  } else {
+    products.value.sort((a, b) => b.sales - a.sales);
+    sortSens.value = "asc";
+  }
 }
 function sortPrice() {
-  products.value.sort((a, b) => a.price - b.price);
+  if (sortSens.value === "asc") {
+    products.value.sort((a, b) => a.price - b.price);
+    sortSens.value = "desc";
+  } else {
+    products.value.sort((a, b) => b.price - a.price);
+    sortSens.value = "asc";
+  }
 }
 function sortNewest() {
-  products.value.sort(
-    (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()
-  );
+  if (sortSens.value === "asc") {
+    products.value.sort(
+      (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()
+    );
+    sortSens.value = "desc";
+  } else {
+    products.value.sort(
+      (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+    );
+    sortSens.value = "asc";
+  }
 }
 </script>
 
 <template>
   <SortProduct
+    :sortSens="sortSens"
     @sortTopRated="sortTopRated"
     @sortPopular="sortPopular"
     @sortPrice="sortPrice"
